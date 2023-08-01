@@ -3,7 +3,7 @@ import { data } from '../constants'
 
 export const Services = ({ }) => {
     return (
-        <div className='flex justify-center space-x-3'>
+        <div className='flex items-center sm:justify-center gap-y-10 sm:gap-x-20 flex-col sm:flex-row'>
             {data.homepage2.map((homepage, index) => (
                 <ServiceCard 
                 key={homepage.title + index} 

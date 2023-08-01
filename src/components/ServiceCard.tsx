@@ -10,15 +10,16 @@ interface ServiceCardProps {
 //Homepage screen 2 content
 export const ServiceCard = ({ title, subtitle, imgUrl }: ServiceCardProps) => {
     return (
-        <div className='flex'>
-            <Stack className='flex relative photo-detail' borderWidth='5px' borderRadius='' overflow='hidden'>
+        <div className='flex w-64 h-96'>
+            <Stack className='flex relative w-full h-full' borderWidth='5px' borderRadius='' overflow='hidden'>
                 <Image
                     src={imgUrl}
                     layout={'fill'}
                     objectFit={'cover'}
                     alt='homepage2 image.'
+                    className=''
                 />
-                <div className='flex mt-32 mx-2 mb-3 absolute bg-slate-50 box-border w-50 h-45 border border-black'>
+                <div className='flex mt-32 mx-2 mb-3 absolute bg-slate-50 box-border border border-black'>
                     <Box className='flex flex-col items-center'>
                         <h1 className='mt-7'>{title}</h1>
                         <p className='m-5 mb-8 text-center'>{subtitle}</p>
