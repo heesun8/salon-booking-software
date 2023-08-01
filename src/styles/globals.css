@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.photo-detail {
+    width: 250px;
+    height: 375px;
+}

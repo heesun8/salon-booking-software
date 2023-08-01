@@ -28,6 +28,6 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-  ],
+, "public/images"  ],
   "exclude": ["node_modules"]
 }
