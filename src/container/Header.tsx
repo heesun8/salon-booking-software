@@ -14,15 +14,15 @@ export const Header = ({ }) => {
                     className='brightness-50'
                 />
             </div>
-            <Stack className='flex absolute border border-black border-2'>
+            <Stack className='flex absolute'>
                 <div className='flex flex-col items-center'>
                     <h1 className='text-slate-100 text-7xl sm:text-[250px]'>éveiller</h1>
 
-                    <div className='w-50 h-50 mt-60 mb-20'>
+                    <div className='w-50 h-50 mt-60 mb-20 animate-bounce'>
                         <Image src={images.homeDownArrow}
                             layout={'contain'}
                             objectFit={'contain'}
-                            alt='downArrow'
+                            alt='downArrow.'
                         />
                     </div>
                 </div>

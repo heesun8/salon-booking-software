@@ -2,7 +2,7 @@ import Image, { StaticImageData } from 'next/image'
 import { Box, Button, Stack } from '@chakra-ui/react'
 
 interface ServiceCardProps {
-    title: string
+    title: string | undefined
     subtitle: string
     imgUrl: StaticImageData //Instead of 'HTMLImageElement', looks like this is the correct typescript typing for static images in assets folder
 }
@@ -27,7 +27,6 @@ export const ServiceCard = ({ title, subtitle, imgUrl }: ServiceCardProps) => {
                         >Book Now
                         </Button>
                     </Box>
-
                 </div>
             </Stack>
         </div>

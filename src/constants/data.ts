@@ -18,4 +18,41 @@ const homepage2 = [
     },
 ]
 
-export default { homepage2 };
+const ourStory = [
+    {
+        title: 'Our Story',
+        subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel ipsum.Nulla vitae nisl imperdiet, pharetra nisi interdum, varius turpis. Aliquam ut magna leo. Donec feugiat, leo non vestibulum molestie, sapien nunc porttitor lorem, id aliquet ipsum velit in turpis. Phasellus blandit, elit ac lobortis laoreet, magna velit sodales magna",
+    },
+]
+const header = [
+    {
+        title: 'Beauty and Spa Center',
+        subheading: "Vivamus sed ipsum porttitor, mattis est auctor, ultricies dolor. Proin maximus  feugiat lacus, ut sodales lorem laoreet at. In interdum urna odio, quis ornare est auctor eget. Etiam ornare ipsum sed ex rutrum gravida.",
+    },
+    {
+        title: 'Professional Hair & Nail Stylists',
+        subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel ipsum. Nulla vitae nisl imperdiet, pharetra nisi interdum, varius turpis. Aliquam ut magna leo. Donec feugiat, leo lobortis laoreet, magna velit sodales magna",
+    },
+    {
+        title: 'Working Hours',
+        subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel ipsum. Nulla vitae nisl imperdiet, pharetra nisi interdum, varius turpis.",
+    },
+    
+]
+
+const footer = [
+    {
+        title: 'Footer 1',
+        subheading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel'
+    },
+    {
+        title: 'Employments?',
+        subheading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel'
+    },
+    {
+        title: 'Contact Us',
+        subheading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel'
+    },
+]
+
+export default { homepage2, ourStory, header, footer };
