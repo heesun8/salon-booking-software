@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@500&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fonts */
+@font-face {
+    font-family: 'Noto Serif Tamil', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@500&display=swap')
+}
+@font-face {
+    font-family: 'Bebas Neue', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
+}
+@layer base {
+    @font-face {
+        font-family: 'rondal', 'serif';
+        font-weight: 700;
+        src: url(../assets/RondalBold-2O4lW.otf) format('opentype');
+        font-display: swap; 
+        /* swap prevents'flash of invisible text' */
+    }
+    /* @font-face {
+        font-family: 'rondal';
+        font-weight:  400;
+        src: url(../assets/RondalRegular-K7ORW.otf) format('opentype');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'rondal';
+        font-weight: 600;
+        src: url(../assets/RondalSemibold-vmZ5Z.otf) format('opentype');
+        font-display: swap;
+    } */
+}

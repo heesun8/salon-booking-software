@@ -11,20 +11,20 @@ interface ServiceCardProps {
 export const ServiceCard = ({ title, subtitle, imgUrl }: ServiceCardProps) => {
     return (
         <div className='flex w-64 h-96'>
-            <Stack className='flex relative w-full h-full' borderWidth='5px' borderRadius='' overflow='hidden'>
+            <Stack className='flex relative w-full h-full' borderWidth='' borderRadius='' overflow='hidden'>
                 <Image
                     src={imgUrl}
                     layout={'fill'}
-                    objectFit={'cover'}
+                    style={{objectFit:'cover'}}
                     alt='homepage2 image.'
                     className=''
                 />
-                <div className='flex mt-32 mx-2 mb-3 absolute bg-slate-50 box-border border border-black'>
+                <div className='flex mt-32 mx-2 mb-3 absolute bg-slate-50 bg-opacity-80'>
                     <Box className='flex flex-col items-center'>
-                        <h1 className='mt-7'>{title}</h1>
-                        <p className='m-5 mb-8 text-center'>{subtitle}</p>
-                        <Button className='mb-4' variant='buttonOutline'
-                        >Book Now
+                        <h1 className='font-rondal font-bold text-3xl mt-7'>{title}</h1>
+                        <p className='font-noto m-5 mb-8 text-center'>{subtitle}</p>
+                        <Button className='font-bebas mb-4' variant='buttonOutline'
+                        >BOOK NOW
                         </Button>
                     </Box>
                 </div>

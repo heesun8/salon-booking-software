@@ -10,18 +10,18 @@ export const Header = ({ }) => {
                     src={images.home}
                     layout={'fill'}
                     objectFit={'cover'}
-                    alt='headerImage'
+                    alt='headerImage.'
                     className='brightness-50'
                 />
             </div>
             <Stack className='flex absolute'>
                 <div className='flex flex-col items-center'>
-                    <h1 className='text-slate-100 text-7xl sm:text-[250px]'>éveiller</h1>
+                    <h1 className='font-serif text-slate-100 text-7xl sm:text-[250px]'>éveiller</h1>
 
                     <div className='w-50 h-50 mt-60 mb-20 animate-bounce'>
-                        <Image src={images.homeDownArrow}
-                            layout={'contain'}
-                            objectFit={'contain'}
+                        <Image
+                            src={images.homeDownArrow}
+                            style={{objectFit:'contain'}}
                             alt='downArrow.'
                         />
                     </div>
