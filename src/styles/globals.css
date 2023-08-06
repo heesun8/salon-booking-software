@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+Tamil:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,6 +13,10 @@
 @font-face {
     font-family: 'Bebas Neue', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
+}
+@font-face {
+    font-family: 'Noto Serif Tamil', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+Tamil:wght@300;400;500&display=swap')
 }
 @layer base {
     @font-face {
