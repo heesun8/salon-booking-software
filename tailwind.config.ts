@@ -15,6 +15,12 @@ export default {
         '2/3': '2 / 3',
       },
     },
+    colors: {
+      'peach': {
+        100: '#FFDBC0',
+        200: '#DDA47C'
+      }
+    }
   },
   plugins: [],
 } satisfies Config;

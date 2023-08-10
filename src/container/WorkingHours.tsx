@@ -3,6 +3,7 @@ import { Stack, Button, Box } from '@chakra-ui/react'
 import Image from 'next/image'
 import images from '../constants/images'
 
+//Need to work on the maybe changing the sm: responsive to md: responsive cos they don't all look great yet
 export const WorkingHours = ({ }) => {
     return (
         <div className='bg-white flex flex-col items-center'>
@@ -44,6 +45,7 @@ export const WorkingHours = ({ }) => {
                 width={{base: '200px', md: '400px' }}
                 fontSize={{base:'20px', md: '30px'}}
                 fontWeight={{base: 'normal', md: 'medium'}}
+                // borderRadius='0'
                 >
                 Book Now
             </Button>

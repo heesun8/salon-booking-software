@@ -6,8 +6,8 @@ interface FooteringProps {
 
 export const Footering = ( { title, subheading}: FooteringProps ) => {
     return (
-        <div> 
-            <h2>{title}</h2>
+        <div className='flex flex-col'> 
+            <h2 className='font-rondal font-bold'>{title}</h2>
             <p>{subheading}</p>
         </div>
     )
