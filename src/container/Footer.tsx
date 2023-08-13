@@ -30,7 +30,7 @@ export const Footer = ({ }) => {
                             subheading={footer.subheading}
                         />
                     ))}
-                    <div>Opening Hours</div>
+                    <div>Opening Hour</div>
                 </div>
                 <div className='border w-24 border-2 border-peach-200' />
                 <p>Some footer note or website owner signature comment</p>
