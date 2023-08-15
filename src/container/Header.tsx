@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Stack } from '@chakra-ui/react'
 import { images } from '~/constants'
 
-export const Header = ({ }) => {
+export const Header = ({}) => {
     return (
         <div className='flex z-index relative justify-center items-end'>
             <div className='h-screen'>

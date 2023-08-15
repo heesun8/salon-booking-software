@@ -53,6 +53,10 @@ const footer = [
         title: 'Contact Us',
         subheading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel'
     },
+    {
+        title: 'Footer 2',
+        subheading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel'
+    },
 ]
 
 export default { homepage2, ourStory, header, footer };

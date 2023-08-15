@@ -19,6 +19,10 @@ export default {
       'peach': {
         100: '#FFDBC0',
         200: '#DDA47C'
+      },
+      'slate': {
+        50: '#f8fafc',
+        100: '#f1f5f9'
       }
     }
   },
