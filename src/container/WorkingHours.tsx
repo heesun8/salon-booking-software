@@ -41,6 +41,7 @@ export const WorkingHours = ({ }) => {
                 variant='buttonOutline'
                 className='m-14 px-36 font-bebas text-6xl'
                 size='lg' 
+                _hover={{bg: 'peach.200', textColor: 'white'}}
                 height={{base:'48px', md: '70px'}}
                 width={{base: '200px', md: '400px' }}
                 fontSize={{base:'20px', md: '30px'}}

@@ -17,6 +17,7 @@ export default {
     },
     colors: {
       'peach': {
+        50: '#f6b092',
         100: '#FFDBC0',
         200: '#DDA47C'
       },
