@@ -40,6 +40,27 @@ const header = [
     
 ]
 
+const services = [
+    {
+        imgHeader: images.workinghours,
+        imgUrl: images.hairstyling2,
+        title: 'Hair Styling',
+        serviceMenu: ['COLORS', 'CUT', 'HAIR EXTENSIONS', 'PERMS & RELAXERS']
+    },
+    {
+        imgHeader: images.nailstyling1,
+        imgUrl: images.nailstyling2,
+        title: 'Nail Styling',
+        serviceMenu: ['NAIL ART', 'ACRYLIC OVERLAY', 'NAIL MAINTENANCE', 'GEL & SHELLAC MANICURE']
+    },
+    {
+        imgHeader: images.massage1,
+        imgUrl: images.massage2,
+        title: 'Massages',
+        serviceMenu: ['HOT STONE', 'SWEDISH', 'REIKI', 'AROMATHERAPY']
+    },
+]
+
 const footer = [
     {
         title: 'Footer 1',
@@ -59,4 +80,4 @@ const footer = [
     },
 ]
 
-export default { homepage2, ourStory, header, footer };
+export default { homepage2, ourStory, header, services, footer };

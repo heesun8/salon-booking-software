@@ -18,6 +18,12 @@
     font-family: 'Noto Serif Tamil', serif;
     src: url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+Tamil:wght@300;400;500&display=swap')
 }
+@font-face {
+    font-family: 'country';
+    font-weight: 700;
+    src: url(../assets/Countryside-YdKj.ttf) format('truetype');
+    font-display: swap;
+}
 @layer base {
     @font-face {
         font-family: 'rondal', 'serif';
