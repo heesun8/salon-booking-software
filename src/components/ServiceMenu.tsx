@@ -23,16 +23,6 @@ export const ServiceMenu = ({ serviceMenu }: ServiceMenuProps) => {
             <div
                 className='border-r-[15px] border-l-[15px] border-t-[15px] border-t-zinc-300 border-slate-10'
             />
-            <Button
-                className='font-bebas mt-3'
-                variant='outline'
-                border='2px'
-                borderColor='zinc.300'
-                _hover={{bg: 'peach.100', border: '0px'}}
-                fontWeight={{ base: 'normal', md: 'medium' }}
-            >
-                <h1 className='text-zinc-600 px-8'>BOOK APPOINTMENT</h1>
-            </Button>
         </div>
     )
 } 
