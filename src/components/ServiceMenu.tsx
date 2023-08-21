@@ -7,7 +7,7 @@ interface ServiceMenuProps {
 export const ServiceMenu = ({ serviceMenu }: ServiceMenuProps) => {
     return (
         <div className='flex flex-col items-center'>
-            <div className='bg-zinc-300 w-64 h-12' />
+            <div className='bg-zinc-300 w-96 h-12' />
             {serviceMenu.map((menu, index) => (
                 <div>
                     <p
@@ -16,10 +16,10 @@ export const ServiceMenu = ({ serviceMenu }: ServiceMenuProps) => {
                     >
                         {menu}
                     </p>
-                    <div className='bg-zinc-300 w-64 h-0.5' />
+                    <div className='bg-zinc-300 w-96 h-0.5' />
                 </div>
             ))}
-            <div className='bg-zinc-300 w-64 h-12' />
+            <div className='bg-zinc-300 w-96 h-12' />
             <div
                 className='border-r-[15px] border-l-[15px] border-t-[15px] border-t-zinc-300 border-slate-10'
             />
