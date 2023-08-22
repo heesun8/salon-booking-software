@@ -30,14 +30,14 @@ export const ServicePage = ({ imgHeader, imgUrl, title, serviceMenu }: ServicePa
                 </div>
             </div>
             <div className='flex relative justify-center sm:space-x-24 mt-10 flex-col sm:flex-row'>
-                <div className='flex w-96 h-96'>
+                <div className='flex w-96 h-96 hidden sm:inline'>
                     <Image
                         width={500}
                         height={500}
                         style={{ objectFit: 'cover' }}
                         src={imgUrl}
                         alt='Service Menu Image 2.'
-                        className='w-full h-5/6 '
+                        className='w-full h-5/6'
                     />
                 </div>
                 <div className='flex flex-col pb-10 items-center'>
