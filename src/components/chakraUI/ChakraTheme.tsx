@@ -9,6 +9,8 @@ const theme = extendTheme({
     colors: {
         peach: {
             50: '#f6b092',
+            70: '#fff8f3',
+            80: '#ffeada',
             100: '#FFDBC0',
             200: '#DDA47C'
         },
@@ -18,6 +20,11 @@ const theme = extendTheme({
             500: '#71717a',
             700: '#3f3f46'
         },
+        slate: {
+            10: '#fff',
+            50: '#f8fafc',
+            100: '#f1f5f9'
+          },
     },
 })
 

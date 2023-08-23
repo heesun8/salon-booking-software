@@ -61,6 +61,87 @@ const services = [
     },
 ]
 
+const hairMenu = [
+    {
+        imgUrl: images.hair1,
+        title: 'COLORS',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 50.00,
+    },
+    {
+        imgUrl: images.hair2,
+        title: 'CUT',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 20.00,
+    },
+    {
+        imgUrl: images.hair3,
+        title: 'HAIR EXTENSIONS',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 300.00,
+    },
+    {
+        imgUrl: images.hair4,
+        title: 'PERMS & RELAXERS',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 250.00,
+    },
+]
+
+const nailMenu = [
+    {
+        imgUrl: images.nail1,
+        title: 'NAIL ART',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 55.00,
+    },
+    {
+        imgUrl: images.nail2,
+        title: 'ACRYLIC OVERLAY',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 80.00,
+    },
+    {
+        imgUrl: images.nail3,
+        title: 'NAIL MAINTENANCE',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 50.00,
+    },
+    {
+        imgUrl: images.nail4,
+        title: 'GEL & SHELLAC MANICURE',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 120.00,
+    },
+]
+
+const massageMenu = [
+    {
+        imgUrl: images.massage3,
+        title: 'HOT STONE',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 60.00,
+    },
+    {
+        imgUrl: images.massage4,
+        title: 'SWEDISH',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 60.00,
+    },
+    {
+        imgUrl: images.massage5,
+        title: 'REIKI',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 50.00,
+    },
+    {
+        imgUrl: images.massage6,
+        title: 'AROMATHERAPY',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        price: 70.00,
+    },
+]
+
 const footer = [
     {
         title: 'Footer 1',
@@ -80,4 +161,4 @@ const footer = [
     },
 ]
 
-export default { homepage2, ourStory, header, services, footer };
+export default { homepage2, ourStory, header, services, hairMenu, nailMenu, massageMenu, footer };

@@ -19,9 +19,11 @@ export default {
     colors: {
       'peach': {
         50: '#f6b092',
+        70: '#fff8f3',
+        80: '#ffeada',
         100: '#FFDBC0',
         200: '#DDA47C'
-      },
+    },
       'slate': {
         10: '#fff',
         50: '#f8fafc',
