@@ -61,26 +61,31 @@ const services = [
     },
 ]
 
+
 const hairMenu = [
     {
+        id: 11,
         imgUrl: images.hair1,
         title: 'COLORS',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 50.00,
     },
     {
+        id: 12,
         imgUrl: images.hair2,
         title: 'CUT',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 20.00,
     },
     {
+        id: 13,
         imgUrl: images.hair3,
         title: 'HAIR EXTENSIONS',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 300.00,
     },
     {
+        id: 14,
         imgUrl: images.hair4,
         title: 'PERMS & RELAXERS',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
@@ -90,24 +95,28 @@ const hairMenu = [
 
 const nailMenu = [
     {
+        id: 21,
         imgUrl: images.nail1,
         title: 'NAIL ART',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 55.00,
     },
     {
+        id: 22,
         imgUrl: images.nail2,
         title: 'ACRYLIC OVERLAY',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 80.00,
     },
     {
+        id: 23,
         imgUrl: images.nail3,
         title: 'NAIL MAINTENANCE',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 50.00,
     },
     {
+        id: 24,
         imgUrl: images.nail4,
         title: 'GEL & SHELLAC MANICURE',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
@@ -117,29 +126,108 @@ const nailMenu = [
 
 const massageMenu = [
     {
+        id: 31,
         imgUrl: images.massage3,
         title: 'HOT STONE',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 60.00,
     },
     {
+        id: 32,
         imgUrl: images.massage4,
         title: 'SWEDISH',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 60.00,
     },
     {
+        id: 33,
         imgUrl: images.massage5,
         title: 'REIKI',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 50.00,
     },
     {
+        id: 34,
         imgUrl: images.massage6,
         title: 'AROMATHERAPY',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nibh elementum, pharetra turpis ut, venenatis nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
         price: 70.00,
     },
+]
+
+const menu = [
+        {
+            id: 11,
+            imgUrl: images.hair1,
+            title: 'COLORS',
+            price: 50.00,
+        },
+        {
+            id: 12,
+            imgUrl: images.hair2,
+            title: 'CUT',
+            price: 20.00,
+        },
+        {
+            id: 13,
+            imgUrl: images.hair3,
+            title: 'HAIR EXTENSIONS',
+            price: 300.00,
+        },
+        {
+            id: 14,
+            imgUrl: images.hair4,
+            title: 'PERMS & RELAXERS',
+            price: 250.00,
+        },
+        {
+            id: 21,
+            imgUrl: images.nail1,
+            title: 'NAIL ART',
+            price: 55.00,
+        },
+        {
+            id: 22,
+            imgUrl: images.nail2,
+            title: 'ACRYLIC OVERLAY',
+            price: 80.00,
+        },
+        {
+            id: 23,
+            imgUrl: images.nail3,
+            title: 'NAIL MAINTENANCE',
+            price: 50.00,
+        },
+        {
+            id: 24,
+            imgUrl: images.nail4,
+            title: 'GEL & SHELLAC MANICURE',
+            price: 120.00,
+        },
+        {
+            id: 31,
+            imgUrl: images.massage3,
+            title: 'HOT STONE',
+            price: 60.00,
+        },
+        {
+            id: 32,
+            imgUrl: images.massage4,
+            title: 'SWEDISH',
+            price: 60.00,
+        },
+        {
+            id: 33,
+            imgUrl: images.massage5,
+            title: 'REIKI',
+            price: 50.00,
+        },
+        {
+            id: 34,
+            imgUrl: images.massage6,
+            title: 'AROMATHERAPY',
+            price: 70.00,
+        },
 ]
 
 const footer = [
@@ -161,4 +249,4 @@ const footer = [
     },
 ]
 
-export default { homepage2, ourStory, header, services, hairMenu, nailMenu, massageMenu, footer };
+export default { homepage2, ourStory, header, services, menu, hairMenu, nailMenu, massageMenu, footer };
