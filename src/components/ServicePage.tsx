@@ -2,6 +2,9 @@ import Image, { StaticImageData } from "next/image"
 import { Button } from '@chakra-ui/react'
 import { ServiceHeader } from '../components/ServiceHeader'
 import { ServiceMenu } from '../components/ServiceMenu'
+import router, { useRouter } from "next/router"
+import { useEffect, useState } from "react"
+import Link from "next/link"
 
 interface ServicePageProps {
     imgHeader: StaticImageData
@@ -49,8 +52,9 @@ export const ServicePage = ({ imgHeader, imgUrl, title, serviceMenu }: ServicePa
                         borderColor='zinc.300'
                         _hover={{ bg: 'peach.100', borderColor: 'peach.100' }}
                         fontWeight={{ base: 'normal', md: 'medium' }}
+                        // onClick={() => setIsClicked(true)}
                     >
-                        <h1 className='text-zinc-600 px-8 text-xl'>BOOK APPOINTMENT</h1>
+                        <Link href='/menu'><h1 className='text-zinc-600 px-8 text-xl'>BOOK APPOINTMENT</h1></Link>
                     </Button>
                 </div>
             </div>

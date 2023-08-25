@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from 'next/image'
+import Link from 'next/link'
 import { Box, Button, Stack } from '@chakra-ui/react'
 
 interface ServiceCardProps {
@@ -29,7 +30,7 @@ export const ServiceCard = ({ title, subtitle, imgUrl }: ServiceCardProps) => {
                             _hover={{ bg: 'peach.200', textColor: 'white' }}
                             fontWeight={{ base: 'normal', md: 'medium' }}
                         >
-                            <h1 className='text-xl px-5'>BOOK NOW</h1>
+                            <Link href='/services'><h1 className='text-xl px-5'>BOOK NOW</h1></Link>
                         </Button>
                     </Box>
                 </div>

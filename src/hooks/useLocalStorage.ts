@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react'
 //Hook needed to get the key for the items on the menu lists
 export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     const [value, setValue] = useState<T>(() => {
-        const jsonValue = localStorage.getItem(key)
-        if(jsonValue != null) return JSON.parse(jsonValue)
-
+        if (typeof window !== 'undefined'){ //this if statement is to make sure the page has been mounted on the client prior to accessing 'localStorage'
+            const jsonValue = localStorage.getItem(key)
+            if(jsonValue != null) return JSON.parse(jsonValue)
+        }
         if (typeof initialValue === 'function') {
             return ( initialValue as () => T)()
         } else {

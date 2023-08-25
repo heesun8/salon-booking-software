@@ -3,19 +3,20 @@ import { Button } from '@chakra-ui/react'
 import { useShoppingCart } from '~/context/ShoppingCartContext'
 import { data } from '../constants'
 
-interface MenuItemProps {
+
+//THIS FILE IS CURRENTLY DEPRECIATED
+interface MenuCartItemProps {
     id: number
     quantity: number
 }
 
-export const MenuItem = ({ id, quantity }: MenuItemProps) => {
+export const MenuCartItem = ({ id, quantity }: MenuCartItemProps) => {
     const { removeFromCart } = useShoppingCart()
     const item = data.menu.find(i => i.id === id)
     if (item === null) return null
-
     return (
         <>
-            <li>
+            <li key={item.id}>
                 <div>
                     {/* <Image /> */}
                 </div>
@@ -24,16 +25,11 @@ export const MenuItem = ({ id, quantity }: MenuItemProps) => {
                     <p>{item?.price}</p>
                 </div>
                 <div>
-                    {quantity > 1 && (
-                        <span>
-                            <p>{quantity}</p>
-                        </span>
-                    )}
+                    <p>{thisItem?.quantity}</p>
                     <Button
-                    onClick={() => removeFromCart(item?.id)}
+                        onClick={() => removeFromCart(item?.id)}
                     >Remove</Button>
                 </div>
             </li>
-        </>
-    )
+        </>)
 }

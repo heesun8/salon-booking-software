@@ -30,7 +30,8 @@ export function useShoppingCart() {
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
-        "shopping-cart", []
+        "salon-booking-software", 
+        []
     )
 
     const cartQuantity = cartItems.reduce(
@@ -41,11 +42,15 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         return cartItems.find(item => item.id === id)?.quantity || 0
     }
     function increaseCartQuantity(id: number) {
+        console.log('increase has been clicked')
+        console.log(id)
         setCartItems(currItems => {
             if (currItems.find(item => item.id === id) === null) {
                 return [...currItems, { id, quantity: 1}]
             } else {
+                console.log(cartItems)
                 return currItems.map(item => {
+                    console.log(item.id)
                     if(item.id === id) {
                         return { ...item, quantity: item.quantity + 1 }
                     } else {
@@ -56,6 +61,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         })
     }
     function decreaseCartQuantity(id: number) {
+        console.log('decrease has been clicked')
         setCartItems(currItems => {
             if (currItems.find(item => item.id === id)?.quantity === 1){
                return currItems.filter(item => item.id !== id)
@@ -88,7 +94,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         }}
         >
             {children}
-            <MenuCart />
         </ShoppingCartContext.Provider>
     )
 }

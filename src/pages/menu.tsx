@@ -1,14 +1,63 @@
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react'
+import { useState } from 'react'
+import Link from 'next/link'
 import { MenuCart } from '../components/MenuCart'
 import { MenuList } from '../components/MenuList'
 import { data } from '../constants'
 
 export const Menu = ({ }) => {
+    const [productsInCart, setProductsInCart] = useState<{ id:number; quantity: number}[]>([])
+    
+    //increase the quantity of the specified product in the cart
+    const increaseCartQuantity = (id: number) => {
+        setProductsInCart(currItems => {
+            if(currItems.find(item => item.id === id) == null) {
+                return [...currItems, { id, quantity: 1}]
+            } else {
+                return currItems.map(item => {
+                    if (item.id === id){
+                        return {...item, quantity: item.quantity + 1}
+                    } else {
+                        return item
+                    }
+                })
+            }
+        })
+    }
+    //decrease the quantity of the specified product in the cart
+    const decreaseCartQuantity = (id: number) => {
+        setProductsInCart(currItems => {
+            if(currItems.find(item => item.id === id)?.quantity === 1) {
+                return currItems.filter(item => item.id !== id)
+            } else {
+                return currItems.map(item => {
+                    if (item.id === id) {
+                        return { ...item, quantity: item.quantity - 1 }
+                    } else {
+                        return item
+                    }
+                })
+            }
+        })
+    }
+
+    //fully remove specified item from the cart
+    const removeFromCart = (id: number) => {
+        setProductsInCart(currItems => {
+            return currItems.filter(item => item.id !== id)
+        })
+    }
+
+    //get current total quantity of the specified selected product 
+    const getItemQuantity = (id: number) => {
+        return productsInCart.find(item => item.id === id)?.quantity || 0
+    }
+
     return (
         <div className='bg-peach-100'>
-            <div className='flex justify-between p-5'>
-                <h1 className='font-serif font-bold text-2xl'>éveiller</h1>
-                <MenuCart />
+            <div className='flex sticky top-0 justify-between p-4 bg-zinc-500/[0.06]'>
+                <Link href='/'><h1 className='font-serif font-bold text-2xl text-zinc-700'>éveiller</h1></Link>
+                <MenuCart removeFromCart={removeFromCart} products={productsInCart}/>
             </div>
             <div className='mx-10 py-10'>
                 <Tabs isFitted defaultIndex={0} align='center' size='lg' variant='enclosed unstyled' bg='peach.80' className=''>
@@ -21,36 +70,51 @@ export const Menu = ({ }) => {
                         <TabPanel>
                             {data.hairMenu.map((tab, index) => (
                                 <MenuList
-                                    key={tab.title + index}
-                                    id={tab.id}
-                                    title={tab.title}
-                                    subtitle={tab.subtitle}
-                                    price={tab.price}
-                                    imgUrl={tab.imgUrl}
+                                    // key={tab.title + index}
+                                    // id={tab.id}
+                                    key={tab.id}
+                                    // title={tab.title}
+                                    // subtitle={tab.subtitle}
+                                    // price={tab.price}
+                                    // imgUrl={tab.imgUrl}
+                                    increaseCartQuantity={increaseCartQuantity}
+                                    decreaseCartQuantity={decreaseCartQuantity}
+                                    getItemQuantity={getItemQuantity}
+                                    {...tab}
                                 />
                             ))}
                         </TabPanel>
                         <TabPanel>
                             {data.nailMenu.map((tab, index) => (
                                 <MenuList
-                                    key={tab.title + index}
-                                    id={tab.id}
-                                    title={tab.title}
-                                    subtitle={tab.subtitle}
-                                    price={tab.price}
-                                    imgUrl={tab.imgUrl}
+                                    // key={tab.title + index}
+                                    // id={tab.id}
+                                    key={tab.id}
+                                    // title={tab.title}
+                                    // subtitle={tab.subtitle}
+                                    // price={tab.price}
+                                    // imgUrl={tab.imgUrl}
+                                    increaseCartQuantity={increaseCartQuantity}
+                                    decreaseCartQuantity={decreaseCartQuantity}
+                                    getItemQuantity={getItemQuantity}
+                                    {...tab}
                                 />
                             ))}
                         </TabPanel>
                         <TabPanel>
                             {data.massageMenu.map((tab, index) => (
                                 <MenuList
-                                    key={tab.title + index}
-                                    id={tab.id}
-                                    title={tab.title}
-                                    subtitle={tab.subtitle}
-                                    price={tab.price}
-                                    imgUrl={tab.imgUrl}
+                                    // key={tab.title + index}
+                                    // id={tab.id}
+                                    key={tab.id}
+                                    // title={tab.title}
+                                    // subtitle={tab.subtitle}
+                                    // price={tab.price}
+                                    // imgUrl={tab.imgUrl}
+                                    increaseCartQuantity={increaseCartQuantity}
+                                    decreaseCartQuantity={decreaseCartQuantity}
+                                    getItemQuantity={getItemQuantity}
+                                    {...tab}
                                 />
                             ))}
                         </TabPanel>

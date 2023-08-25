@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, IconButton, Link, Stack, useColorModeValue, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, HStack, IconButton, Link, Stack, textDecoration, useColorModeValue, useDisclosure } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
@@ -10,7 +10,7 @@ export const ServiceNavbar = ({ }) => {
         <div>
             <Box px={4} bg={useColorModeValue('rgba(0,0,0,0.5)', '')} color={useColorModeValue('gray.50', '')} >
                 <Flex  h={16} alignItems={'center'} justifyContent={'space-between'}>
-                    <Flex><h1 className='font-serif font-bold text-3xl'>éveiller</h1></Flex>
+                    <Flex><Link href='/' _hover={{textDecoration: 'none'}}><h1 className='font-serif font-bold text-3xl'>éveiller</h1></Link></Flex>
                     <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
                         <Box px={3} py={1} rounded={'lg'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.50', ''), color: useColorModeValue('gray.900', '') }}><Link as={NextLink} _hover={{ textDecoration: 'none' }} href='#hairstyling'><h1 className='font-bebas text-xl tracking-widest'>Hair</h1></Link></Box>
                         <Box px={3} py={1} rounded={'lg'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.50', ''), color: useColorModeValue('gray.900', '') }}><Link as={NextLink} _hover={{ textDecoration: 'none' }} href='#nailstyling'><h1 className='font-bebas text-xl tracking-widest'>Nail</h1></Link></Box>

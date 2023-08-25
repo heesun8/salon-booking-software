@@ -1,6 +1,7 @@
 import { Heading } from '../components/Heading'
 import { Stack, Button, Box } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 import images from '../constants/images'
 
 //Need to work on the maybe changing the sm: responsive to md: responsive cos they don't all look great yet
@@ -48,7 +49,7 @@ export const WorkingHours = ({ }) => {
                 fontWeight={{base: 'normal', md: 'medium'}}
                 // borderRadius='0'
                 >
-                Book Now
+                <Link href='/services'>Book Now</Link>
             </Button>
         </div>
     )

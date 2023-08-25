@@ -11,15 +11,28 @@ interface MenuListProps {
     subtitle: string
     price: number
     imgUrl: StaticImageData
+    increaseCartQuantity: (id: number) => void
+    decreaseCartQuantity: (id: number) => void
+    getItemQuantity: (id: number) => number
 }
 
-export const MenuList = ({ id, title, subtitle, price, imgUrl }: MenuListProps) => {
-    const {
-        getItemQuantity,
-        increaseCartQuantity,
-        decreaseCartQuantity,
-        removeFromCart,
-    } = useShoppingCart()
+export const MenuList = ({
+    id,
+    title,
+    subtitle,
+    price,
+    imgUrl,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    getItemQuantity
+}: MenuListProps) => {
+    
+    // const {
+    //     getItemQuantity,
+    //     increaseCartQuantity,
+    //     decreaseCartQuantity,
+    //     removeFromCart,
+    // } = useShoppingCart()
     const quantity = getItemQuantity(id)
 
     return (
@@ -45,7 +58,8 @@ export const MenuList = ({ id, title, subtitle, price, imgUrl }: MenuListProps) 
                         <IconContext.Provider value={{ size: '30' }}>
                             <button
                                 className='px-2'
-                                onClick={() => decreaseCartQuantity(id)}
+                                onClick={() =>
+                                    decreaseCartQuantity(id)}
                             >
                                 <BiBookmarkMinus />
                             </button>
