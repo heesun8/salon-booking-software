@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { useRouter } from 'next/router'
 import { useShoppingCart } from '../context/ShoppingCartContext'
 import { MenuCartItem } from '../components/MenuCartItem'
 import { data } from '../constants'
 import { Button, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { api } from 'src/utils/api'
 
 interface MenuCartProps {
     products: { id: number, quantity: number }[]
@@ -15,8 +17,20 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
     const [subtotal2, setSubtotal2] = useState<number[]>([])
     // const { cartItems } = useShoppingCart()
     const btnRef = React.useRef(null)
+    const router = useRouter()
+
+    //tRPC 
+    const { mutate: checkout, isLoading } = api.checkout.checkoutSession.useMutation({
+        onSuccess: ({ url }) => {
+            router.push(url)
+        },
+        onMutate: ({ products }) => {
+            localStorage.setItem('products', JSON.stringify(products))
+        },
+    })
 
     //get the price of an item using their id
+    //ATM DEPRECIATED, not used in the overall code 
     const getPrice = () => (
         data.menu.map((item) => {
             if (products.find(i => i.id === item.id)) {
@@ -30,6 +44,12 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
         )
     )
 
+    //get the total number of items in the cart 
+    const cartQuantity = (
+        products.reduce(
+            (acc, item) => acc + item.quantity, 0
+        )
+    )
     //use the .reduce() function to add all the items in the shopping cart
     const subtotal = (
         products.reduce(
@@ -43,13 +63,30 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
 
     return (
         <div>
-            <Button 
-            variant={''}
-            bg={'slate.50'}
-            ref={btnRef} onClick={onOpen}
-            >
-                <AiOutlineShoppingCart size={40} color={''} />
-            </Button>
+            {cartQuantity > 0 && (
+                <Button
+                    variant={''}
+                    bg={'slate.50'}
+                    ref={btnRef} onClick={onOpen}
+                >
+                    <AiOutlineShoppingCart size={40} color={''} />
+                    <div
+                    className='absolute bottom-0 right-0 translate-y-3 translate-x-2 bg-peach-200  p-2 rounded-full flex justify-center items-center'>
+                        {cartQuantity}
+                    </div>
+                </Button>
+            )}
+            {cartQuantity <= 0 && (
+                <Button
+                    variant={''}
+                    bg={'slate.50'}
+                    ref={btnRef} onClick={onOpen}
+                >
+                    <AiOutlineShoppingCart size={40} color={''} />
+                </Button>
+
+            )}
+
             <Drawer
                 isOpen={isOpen}
                 placement={'right'}
@@ -119,6 +156,7 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
                         <Button
                             variant={'buttonOutline'}
                             fontWeight={{ base: 'normal', md: 'medium' }}
+                            onClick={() => checkout({ products })}
                         >
                             <h1 className='font-bebas px-5 text-xl'>MAKE PAYMENT</h1>
                         </Button>
