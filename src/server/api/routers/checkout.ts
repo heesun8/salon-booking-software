@@ -3,6 +3,7 @@ import { publicProcedure, createTRPCRouter } from '../trpc'
 import { z } from 'zod'
 import _stripe from 'stripe'
 import { data } from '~/constants'
+import { title } from 'process'
 
 const stripe = new _stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: '2023-08-16'
@@ -29,24 +30,59 @@ export const checkoutRouter = createTRPCRouter({
                     }))
                 )
 
-                if (productsInCart.length !== input.products.length) {
-                    throw new TRPCError({ code: 'CONFLICT', message: 'Some products are not available' })
-                }
+                //productsInCart currently returns even items with 0 quantity, stripe does not accept 0 quantity items so 
+                //creating this new array with only the items that the user has selected
+                const productsInCart2 = (
+                    input.products.map(product => (
+                        productsInCart.filter(p => p.id === product.id)
+                    ))
+                )
+                
+                // const productsInCart3 = (
+                //     productsInCart2.map(product => product.id)
+                //     )
+
+                // const productsInCart3 = productsInCart2.map(item => {
+                //     const container = {};
+                //     container[item.title] = item.quantity
+                //     return container
+                // })
+
+                //IGNORE THIS. console.log's just for various testings
+                console.log('[PRODUCTSINCART2]' + productsInCart2.length)
+                console.log('[INPUT PRODUCTS]' + input.products.length)
+                console.log('[INPUT ID]' + input.products.find(product => console.log(product.id)))
+                console.log('[PRODUCTS ID]' + productsInCart2.find(p => console.log(p[0].title)))
+
+                // if (productsInCart2.length !== input.products.length) {
+                //     // throw new TRPCError({ code: 'CONFLICT', message: `${console.log('[INPUT PRODUCTS]' + input.products.length)}` + 'Some products are not available' })
+                //     throw new TRPCError({ code: 'CONFLICT', message: 'Some products are not available' })
+                // }
 
                 const session = await stripe.checkout.sessions.create({
                     payment_method_types: ['card'],
 
                     mode: 'payment',
-                    line_items: productsInCart.map((product) => ({
+                    line_items: productsInCart2.map((product) => ({
                         price_data: {
                             currency: 'usd',
                             product_data: {
-                                name: product.title,
+                                name: product[0].title,
                             },
-                            unit_amount: product.price * 100,
+                            unit_amount: product[0].price * 100,
                         },
-                        quantity: product.quantity,
+                        quantity: product[0].quantity,
                     })),
+                    // line_items: productsInCart.map((product) => ({
+                    //     price_data: {
+                    //         currency: 'usd',
+                    //         product_data: {
+                    //             name: product.title,
+                    //         },
+                    //         unit_amount: product.price * 100,
+                    //     },
+                    //     quantity: product.quantity,
+                    // })),
                     shipping_options: [
                         {
                             shipping_rate_data: {
@@ -69,7 +105,7 @@ export const checkoutRouter = createTRPCRouter({
             } catch (error) {
                 let msg = ''
                 if (error instanceof Error) {
-                    msg = error.message
+                    msg = 'HEYHEYEHY' + error.message
                 }
                 throw new TRPCError({
                     message: msg || 'Payment failed',

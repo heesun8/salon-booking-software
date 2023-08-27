@@ -3,7 +3,13 @@ import { useEffect, useState } from 'react'
 import images from '../constants/images'
 import { data } from '../constants'
 
-export const Success = ({ }) => {
+interface SuccessProps {
+    menuProducts: {
+        id: number
+        quantity: number
+    }[]
+}
+export const Success = ({ menuProducts }: SuccessProps) => {
     const [products, setProducts] = useState<{ id: number; quantity: number }[] | null | false>(null)
 
     useEffect(() => {
@@ -30,22 +36,29 @@ export const Success = ({ }) => {
                 className='w-full h-screen'
                 unoptimized
             />
-            {data.menu.map(item => (
-            <div className='flex flex-1 flex-col w-1/3 h-2/3 m-10 absolute items-center bg-slate-10'>
-                <div className='flex items-center flex-col'>
-                    <h1>Ticket #:</h1>
-                    <p>random number</p>
-                </div>
-                <div className='border-t flex justify-between'>
-                    <h1>{item.title}</h1>
-                    <p>{item.price}</p>
-                </div>
-                <div className='flex justify-between items-end border-t'>
-                    <h1>TOTAL</h1>
-                    <p>AMOUNT</p>
-                </div>
-            </div>
-            ))}
+            <div className='flex absolute text-slate-50'>Home</div>
+            {data.menu.map(item => {
+                if (menuProducts.find(p => p.id === item.id)) {
+                    return(
+                        (
+                            <div className='flex flex-1 flex-col w-1/3 h-2/3 m-10 absolute items-center bg-slate-10'>
+                                <div className='flex items-center flex-col'>
+                                    <h1>Ticket #:</h1>
+                                    <p>random number</p>
+                                </div>
+                                <div className='border-t flex justify-between'>
+                                    <h1>{item.title}</h1>
+                                    <p>{item.price}</p>
+                                </div>
+                                <div className='flex justify-between items-end border-t'>
+                                    <h1>TOTAL</h1>
+                                    <p>AMOUNT</p>
+                                </div>
+                            </div>
+                            )
+                    )
+                }
+            })}
         </div>
     )
 }

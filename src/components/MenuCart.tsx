@@ -7,6 +7,7 @@ import { data } from '../constants'
 import { Button, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { api } from 'src/utils/api'
+import Success from '~/pages/success'
 
 interface MenuCartProps {
     products: { id: number, quantity: number }[]
@@ -20,7 +21,7 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
     const router = useRouter()
 
     //tRPC 
-    const { mutate: checkout, isLoading } = api.checkout.checkoutSession.useMutation({
+    const { mutate: checkout, isLoading, error } = api.checkout.checkoutSession.useMutation({
         onSuccess: ({ url }) => {
             router.push(url)
         },
@@ -156,9 +157,11 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
                         <Button
                             variant={'buttonOutline'}
                             fontWeight={{ base: 'normal', md: 'medium' }}
-                            onClick={() => checkout({ products })}
+                            onClick={() => 
+                                checkout({ products })}
                         >
                             <h1 className='font-bebas px-5 text-xl'>MAKE PAYMENT</h1>
+                            <Success menuProducts={products}/>
                         </Button>
                     </DrawerFooter>
                 </DrawerContent>
