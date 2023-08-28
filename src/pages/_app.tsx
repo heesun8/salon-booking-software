@@ -12,11 +12,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
   pageProps: { session, ...pageProps },
 }) => {
   return (
-    <ShoppingCartProvider>
+    // <ShoppingCartProvider>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
       </ChakraProvider>
-    </ShoppingCartProvider>
+    // </ShoppingCartProvider>
   );
 };
 

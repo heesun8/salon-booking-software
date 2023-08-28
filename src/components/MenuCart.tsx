@@ -4,10 +4,11 @@ import { useRouter } from 'next/router'
 import { useShoppingCart } from '../context/ShoppingCartContext'
 import { MenuCartItem } from '../components/MenuCartItem'
 import { data } from '../constants'
-import { Button, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, useDisclosure } from '@chakra-ui/react'
+import { Button, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, Spinner, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { api } from 'src/utils/api'
 import Success from '~/pages/success'
+import randomstring from 'randomstring'
 
 interface MenuCartProps {
     products: { id: number, quantity: number }[]
@@ -20,6 +21,12 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
     const btnRef = React.useRef(null)
     const router = useRouter()
 
+    const ticketNumber = (
+        randomstring.generate({
+            length: 7,
+            charset: 'alphabetic'
+        })
+    )
     //tRPC 
     const { mutate: checkout, isLoading, error } = api.checkout.checkoutSession.useMutation({
         onSuccess: ({ url }) => {
@@ -27,6 +34,7 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
         },
         onMutate: ({ products }) => {
             localStorage.setItem('products', JSON.stringify(products))
+            localStorage.setItem('ticketNumber', ticketNumber)
         },
     })
 
@@ -72,7 +80,7 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
                 >
                     <AiOutlineShoppingCart size={40} color={''} />
                     <div
-                    className='absolute bottom-0 right-0 translate-y-3 translate-x-2 bg-peach-200  p-2 rounded-full flex justify-center items-center'>
+                        className='absolute bottom-0 right-0 translate-y-3 translate-x-2 bg-peach-200  p-2 rounded-full flex justify-center items-center'>
                         {cartQuantity}
                     </div>
                 </Button>
@@ -157,11 +165,14 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
                         <Button
                             variant={'buttonOutline'}
                             fontWeight={{ base: 'normal', md: 'medium' }}
-                            onClick={() => 
+                            onClick={() =>
                                 checkout({ products })}
                         >
-                            <h1 className='font-bebas px-5 text-xl'>MAKE PAYMENT</h1>
-                            <Success menuProducts={products}/>
+                            {isLoading ? (
+                                <div className='px-14'>
+                                    <Spinner size='md' />
+                                </div>
+                            ) : <h1 className='font-bebas px-5 text-xl'>MAKE PAYMENT</h1>}
                         </Button>
                     </DrawerFooter>
                 </DrawerContent>

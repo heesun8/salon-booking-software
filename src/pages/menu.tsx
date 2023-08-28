@@ -4,19 +4,20 @@ import Link from 'next/link'
 import { MenuCart } from '../components/MenuCart'
 import { MenuList } from '../components/MenuList'
 import { data } from '../constants'
+import Success from './success'
 
 export const Menu = ({ }) => {
-    const [productsInCart, setProductsInCart] = useState<{ id:number; quantity: number}[]>([])
-    
+    const [productsInCart, setProductsInCart] = useState<{ id: number; quantity: number }[]>([])
+
     //increase the quantity of the specified product in the cart
     const increaseCartQuantity = (id: number) => {
         setProductsInCart(currItems => {
-            if(currItems.find(item => item.id === id) == null) {
-                return [...currItems, { id, quantity: 1}]
+            if (currItems.find(item => item.id === id) == null) {
+                return [...currItems, { id, quantity: 1 }]
             } else {
                 return currItems.map(item => {
-                    if (item.id === id){
-                        return {...item, quantity: item.quantity + 1}
+                    if (item.id === id) {
+                        return { ...item, quantity: item.quantity + 1 }
                     } else {
                         return item
                     }
@@ -27,7 +28,7 @@ export const Menu = ({ }) => {
     //decrease the quantity of the specified product in the cart
     const decreaseCartQuantity = (id: number) => {
         setProductsInCart(currItems => {
-            if(currItems.find(item => item.id === id)?.quantity === 1) {
+            if (currItems.find(item => item.id === id)?.quantity === 1) {
                 return currItems.filter(item => item.id !== id)
             } else {
                 return currItems.map(item => {
@@ -57,7 +58,7 @@ export const Menu = ({ }) => {
         <div className='bg-peach-100'>
             <div className='flex sticky top-0 justify-between p-4 bg-zinc-500/[0.06]'>
                 <Link href='/'><h1 className='font-serif font-bold text-2xl text-zinc-700'>éveiller</h1></Link>
-                <MenuCart removeFromCart={removeFromCart} products={productsInCart}/>
+                <MenuCart removeFromCart={removeFromCart} products={productsInCart} />
             </div>
             <div className='mx-10 py-10'>
                 <Tabs isFitted defaultIndex={0} align='center' size='lg' variant='enclosed unstyled' bg='peach.80' className=''>
