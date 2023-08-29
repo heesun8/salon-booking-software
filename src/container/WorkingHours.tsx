@@ -18,9 +18,9 @@ export const WorkingHours = ({ }) => {
                     />
                 </div>
                 <Stack className='relative items-center p-5 sm:items-end sm:pt-36 sm:pl-36 sm:pb-36 sm:pr-12'>
-                    <div className='bg-slate-50 bg-opacity-60 text-center pt-7 sm:w-1/3 sm:h-1/2 p-5'>
+                    <div className='bg-slate-50 bg-opacity-60 text-center pt-7 xl:w-1/2 xl:h-1/2 p-5'>
                         <div className=''>
-                            <h1 className='font-rondal font-bold text-2xl sm:text-5xl sm:pb-7'>Working Hours</h1>
+                            <h1 className='font-rondal font-bold text-4xl sm:text-5xl sm:pb-7'>Working Hours</h1>
                             <p className='font-noto font-medium text-sm p-5 sm:text-lg'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet quam a ligula volutpat blandit maximus vel ipsum. Nulla vitae nisl imperdiet, pharetra nisi interdum, varius turpis.</p>
                         </div>
                         <div className='flex justify-center font-noto font-medium sm:text-xl space-x-12 sm:m-7 sm:space-x-36'>

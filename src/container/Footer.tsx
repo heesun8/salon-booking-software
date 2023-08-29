@@ -7,7 +7,7 @@ export const Footer = ({ }) => {
         <div className='bg-peach-100 p-10'>
             <Stack className='items-center'>
                 <h3 className='font-noto'>Join the newsletter</h3>
-                <div className='flex flex-col items-center sm:items-baseline mb-10 sm:flex-row'>
+                <div className='flex flex-col sm:items-baseline mb-10 sm:flex-row'>
                     <label htmlFor='email'></label>
                     <input
                         type='email'
@@ -23,7 +23,7 @@ export const Footer = ({ }) => {
                     </Button>
                 </div>
                 <div className='sm:border w-96 border-1 border-peach-50 mb-10' />
-                <div className='flex flex-col space-y-12 sm:mx-32 sm:space-y-2 sm:flex-row sm:space-x-24'>
+                <div className='flex flex-col items-center space-y-10 sm:mx-10 sm:space-y-2 sm:flex-row sm:space-x-10'>
                     {data.footer.map((footer, index) => (
                         <Footering
                             key={footer.title + index}

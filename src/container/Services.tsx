@@ -20,7 +20,8 @@ export const Services = ({ }) => {
                 title='Beauty and Spa Center'
                 subheading='Vivamus sed ipsum porttitor, mattis est auctor, ultricies dolor. Proin maximus  feugiat lacus, ut sodales lorem laoreet at. In interdum urna odio, quis ornare est auctor eget. Etiam ornare ipsum sed ex rutrum gravida.'
             />
-            <div className='flex items-center sm:justify-center gap-y-10 sm:gap-x-48 flex-col sm:flex-row'>
+            {/* sm:gap-x-48 */}
+            <div className='flex flex-1 items-center sm:justify-center gap-y-10 flex-col sm:flex-row'>
                 {data.homepage2.map((homepage: { title: string; subtitle: string; imgUrl: StaticImageData }, index: any) => (
 
                     <ServiceCard

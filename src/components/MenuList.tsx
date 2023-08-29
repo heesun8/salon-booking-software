@@ -36,7 +36,7 @@ export const MenuList = ({
     const quantity = getItemQuantity(id)
 
     return (
-        <div className='flex bg-peach-70 mb-7'>
+        <div className='flex flex-col sm:flex-row bg-peach-70 mb-7'>
             <div className='p-5'>
                 <Image
                     width={600}
@@ -45,11 +45,11 @@ export const MenuList = ({
                     // layout={'fill'}
                     src={imgUrl}
                     alt='menu list.'
-                    className='w-120 h-48'
+                    className='w-96 h-48 sm:w-120 sm:h-48 2xl:w-96 2xl:h-60'
                 />
             </div>
             <div className='p-5'>
-                <div className='text-left py-2'>
+                <div className='text-left sm:py-2'>
                     <h1 className='font-bold tracking-widest p-2'>{title}</h1>
                     <p className='p-2'>{subtitle}</p>
                 </div>
