@@ -2,13 +2,13 @@ import Image from 'next/image'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { useRouter } from 'next/router'
 import { useShoppingCart } from '../context/ShoppingCartContext'
-import { MenuCartItem } from '../components/MenuCartItem'
 import { data } from '../constants'
 import { Button, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, Spinner, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { api } from 'src/utils/api'
 import Success from '~/pages/success'
 import randomstring from 'randomstring'
+// import { MenuCartItem } from '../components/MenuCartItem'
 
 interface MenuCartProps {
     products: { id: number, quantity: number }[]
@@ -40,18 +40,18 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
 
     //get the price of an item using their id
     //ATM DEPRECIATED, not used in the overall code 
-    const getPrice = () => (
-        data.menu.map((item) => {
-            if (products.find(i => i.id === item.id)) {
-                const q = products.find(i => i.id === item.id)?.quantity
-                console.log(item.price * q)
-                return (item.price * q)
-            } else {
-                return item.price
-            }
-        }
-        )
-    )
+    // const getPrice = () => (
+    //     data.menu.map((item) => {
+    //         if (products.find(i => i.id === item.id)) {
+    //             const q = products.find(i => i.id === item.id)?.quantity
+    //             console.log(item.price * q)
+    //             return (item.price * q)
+    //         } else {
+    //             return item.price
+    //         }
+    //     }
+    //     )
+    // )
 
     //get the total number of items in the cart 
     const cartQuantity = (
