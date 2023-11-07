@@ -15,14 +15,15 @@ interface SuccessProps {
     }[]
 }
 export const Success = ({ menuProducts }: SuccessProps) => {
-    const [products, setProducts] = useState<{ id: number; quantity: number }[] | null | false>(null)
-    const [ticketNumber2, setTicketNumber2] = useState<string>()
+    const [products, setProducts] = useState<{ id: number; quantity: number }[] | null>(null)
+    const [isProducts, isSetProducts] = useState(true)
+    const [ticketNumber2, setTicketNumber2] = useState<string | null>()
      // const [subtotal2, setSubtotal2] = useState<string>()
 
     //Get total of the selected amount
     const subtotal = (
         products?.reduce(
-            (acc, products) => {
+            (acc: number, products: { id: number; quantity: number }) => {
                 const item = data.menu.find(p => p.id === products.id)
                 return acc + (item?.price || 0) * products.quantity
             },
@@ -34,7 +35,7 @@ export const Success = ({ menuProducts }: SuccessProps) => {
     //To get the products associated with this order. Its setup was in the server file 'checkout.ts' 
     useEffect(() => {
         const products = localStorage.getItem('products')
-        if (!products) setProducts(false)
+        if (!products) isSetProducts(false)
         else {
             console.log(products)
             setProducts(JSON.parse(products))
@@ -64,7 +65,7 @@ export const Success = ({ menuProducts }: SuccessProps) => {
         )
 
     //question why the user is here 
-    if (products === false) return <div>What are you doing on this page</div>
+    if (isProducts === false) return <div>What are you doing on this page</div>
 
     return (
         <div className='flex flex-1 flex-col'>

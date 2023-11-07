@@ -49,10 +49,10 @@ export const checkoutRouter = createTRPCRouter({
                 // })
 
                 //IGNORE THIS. console.log's just for various testings
-                console.log('[PRODUCTSINCART2]' + productsInCart2.length)
-                console.log('[INPUT PRODUCTS]' + input.products.length)
-                console.log('[INPUT ID]' + input.products.find(product => console.log(product.id)))
-                console.log('[PRODUCTS ID]' + productsInCart2.find(p => console.log(p[0].title)))
+                // console.log('[PRODUCTSINCART2]' + productsInCart2.length)
+                // console.log('[INPUT PRODUCTS]' + input.products.length)
+                // console.log('[INPUT ID]' + input.products.find(product => console.log(product.id)))
+                // console.log('[PRODUCTS ID]' + productsInCart2.find(p => console.log(p[0].title)))
 
                 // if (productsInCart2.length !== input.products.length) {
                 //     // throw new TRPCError({ code: 'CONFLICT', message: `${console.log('[INPUT PRODUCTS]' + input.products.length)}` + 'Some products are not available' })
@@ -67,11 +67,11 @@ export const checkoutRouter = createTRPCRouter({
                         price_data: {
                             currency: 'usd',
                             product_data: {
-                                name: product[0].title,
+                                name: product[0]!.title,
                             },
-                            unit_amount: product[0].price * 100,
+                            unit_amount: product[0]!.price * 100,
                         },
-                        quantity: product[0].quantity,
+                        quantity: product[0]!.quantity,
                     })),
                     // line_items: productsInCart.map((product) => ({
                     //     price_data: {
