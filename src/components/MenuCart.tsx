@@ -28,15 +28,17 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
         })
     )
     //tRPC 
+    /* eslint-disable @typescript-eslint/no-floating-promises */
     const { mutate: checkout, isLoading, error } = api.checkout.checkoutSession.useMutation({
         onSuccess: ({ url }) => {
-            router.push(url)
+            router.push(url) 
         },
         onMutate: ({ products }) => {
             localStorage.setItem('products', JSON.stringify(products))
             localStorage.setItem('ticketNumber', ticketNumber)
         },
     })
+    /* eslint-disable @typescript-eslint/no-floating-promises */
 
     //get the price of an item using their id
     //ATM DEPRECIATED, not used in the overall code 

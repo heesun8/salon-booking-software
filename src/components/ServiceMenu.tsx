@@ -9,9 +9,8 @@ export const ServiceMenu = ({ serviceMenu }: ServiceMenuProps) => {
         <div className='flex flex-col items-center'>
             <div className='bg-zinc-300 w-96 h-12' />
             {serviceMenu.map((menu, index) => (
-                <div>
+                <div key={index}>
                     <p
-                        key={index}
                         className='text-center p-2'
                     >
                         {menu}

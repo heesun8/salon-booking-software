@@ -24,13 +24,17 @@ export const Footer = ({ }) => {
                 </div>
                 <div className='sm:border w-96 border-1 border-peach-50 mb-10' />
                 <div className='flex flex-col items-center space-y-10 sm:mx-10 sm:space-y-2 sm:flex-row sm:space-x-10'>
-                    {data.footer.map((footer, index) => (
+                    {
+                    /* eslint-disable @typescript-eslint/restrict-plus-operands */
+                    data.footer.map((footer, index) => (
                         <Footering
-                            key={footer.title + index}
+                            key={footer.title + index} 
                             title={footer.title}
                             subheading={footer.subheading}
                         />
-                    ))}
+                    ))
+                    /* eslint-disable @typescript-eslint/restrict-plus-operands */
+                    }
                     {/* <div className='font-rondal font-bold'>Opening Hour</div> */}
                 </div>
                 <div className='sm:border w-96 border-1 border-peach-50 my-10' />

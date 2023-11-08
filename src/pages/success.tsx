@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Spinner } from '@chakra-ui/react'
 import Link from 'next/link'
-import randomstring from 'randomstring'
+// import randomstring from 'randomstring'
 import images from '../constants/images'
 import { data } from '../constants'
 import { Footer } from '~/container/Footer'
@@ -34,12 +34,14 @@ export const Success = ({ menuProducts }: SuccessProps) => {
 
     //To get the products associated with this order. Its setup was in the server file 'checkout.ts' 
     useEffect(() => {
+        /* eslint-disable @typescript-eslint/no-unsafe-argument */
         const products = localStorage.getItem('products')
         if (!products) isSetProducts(false)
         else {
             console.log(products)
             setProducts(JSON.parse(products))
         }
+        /* eslint-disable @typescript-eslint/no-unsafe-argument */
     }, [])
 
     //To get the ticket number associated with this order. Its setup was in the server file 'checkout.ts' 

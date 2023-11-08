@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { MenuCart } from '../components/MenuCart'
 import { MenuList } from '../components/MenuList'
 import { data } from '../constants'
-import Success from './success'
+// import Success from './success'
 
 export const Menu = ({ }) => {
     const [productsInCart, setProductsInCart] = useState<{ id: number; quantity: number }[]>([])

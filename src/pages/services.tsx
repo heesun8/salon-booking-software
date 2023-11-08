@@ -1,5 +1,5 @@
 import { data } from '../constants'
-import { Box, Container, Flex } from '@chakra-ui/react'
+// import { Box, Container, Flex } from '@chakra-ui/react'
 import { ServicePage } from '../components/ServicePage'
 import { ServiceNavbar } from '../components/ServiceNavbar'
 import { Footer } from '../container/Footer'
@@ -12,7 +12,9 @@ export const Services = ({ }) => {
                 <ServiceNavbar />
             </div>
             <div className='z-10 w-full'>
-                {data.services.map((service: { imgHeader: StaticImageData; imgUrl: StaticImageData, title: string, serviceMenu: string[] }, index: any) => (
+                {
+                /* eslint-disable @typescript-eslint/restrict-plus-operands */
+                data.services.map((service: { imgHeader: StaticImageData; imgUrl: StaticImageData, title: string, serviceMenu: string[] }, index: any) => ( 
                     <ServicePage
                         key={index + service.title}
                         imgHeader={service.imgHeader}
@@ -20,7 +22,8 @@ export const Services = ({ }) => {
                         title={service.title}
                         serviceMenu={service.serviceMenu}
                     />
-                ))}
+                ))
+                /* eslint-disable @typescript-eslint/restrict-plus-operands */}
             </div>
             <Footer />
         </div>
