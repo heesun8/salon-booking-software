@@ -3,7 +3,7 @@ import { Button } from '@chakra-ui/react'
 import { ServiceHeader } from '../components/ServiceHeader'
 import { ServiceMenu } from '../components/ServiceMenu'
 import router, { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
 
 interface ServicePageProps {

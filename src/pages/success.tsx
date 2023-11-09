@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Spinner } from '@chakra-ui/react'
 import Link from 'next/link'
 // import randomstring from 'randomstring'

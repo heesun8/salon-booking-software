@@ -117,8 +117,8 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
                                 const thisItem = products.find(product => product.id === item.id)
                                 if (products.find(product => item.id === product.id)) {
                                     return (
-                                        <>
-                                            <li key={item.id} className='flex py-4'>
+                                        <div key={item.id}>
+                                            <li  className='flex py-4'>
                                                 <div className=''>
                                                     <Image
                                                         width={200}
@@ -146,7 +146,7 @@ export const MenuCart = ({ products, removeFromCart }: MenuCartProps) => {
                                                     </div>
                                                 </div>
                                             </li>
-                                        </>)
+                                        </div>)
                                 }
                             })}
                         </ul>

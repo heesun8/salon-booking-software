@@ -1,5 +1,5 @@
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { MenuCart } from '../components/MenuCart'
 import { MenuList } from '../components/MenuList'
@@ -125,5 +125,17 @@ export const Menu = ({ }) => {
         </div>
     )
 }
+
+// Menu.getInitialProps = ({ res, err }: any) => {
+//     /* eslint-disable @typescript-eslint/restrict-template-express */
+//     /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+//     /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+//     const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+//     return { statusCode }
+//     /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+//     /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+//     /* eslint-disable @typescript-eslint/restrict-template-express */
+
+// }
 
 export default Menu

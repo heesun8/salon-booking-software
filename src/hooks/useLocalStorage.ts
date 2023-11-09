@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 //Hook needed to get the key for the items on the menu lists
 export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
