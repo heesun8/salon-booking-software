@@ -1,28 +1,16 @@
-# Create T3 App
+# éveiller - Salon Booking Software
+This is a fullstack, web responsive booking software app for requesting services at a beauty salon with payment transactions included. 
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+![image](https://github.com/heesun8/salon-booking-software/assets/55498566/08b9d2f1-dbad-4eda-ba4a-d55ddb972f59)
 
-## What's next? How do I make an app with this?
+### Link to project: https://salon-booking-software.vercel.app/
+No sign-in required to test software
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+# Tech Used:
+___
+React, NextJs, Typescript, Stripe, Chakra-UI, TailwindCSS, React-Icons. 
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+**_npm run dev_**
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
 
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+Users care about speed but also care if a webpage looks decent. Creating a project with core CSS gives more freedom and variety in design usually, so this project was mainly to test out the various possible UI functions of chakra-UI paired with TailwindCSS, while also creating something functional and practical for real world scenarios. MMaking a full stack app like this with the usual CSS approach would've definitely taken longer. Either that or I've just got to get lightning McQueen faster at them. I'll take that challenge. Alright for those who don't care about design: a future addition that could make this website better is probably adding an admin dashboard perspective, with options to edit the services provided. Oooh maybe even customers getting to make an account where they could see their past transactions. 
