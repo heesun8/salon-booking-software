@@ -7,7 +7,6 @@ This is a fullstack, web responsive booking software app for requesting services
 No sign-in required to test software
 
 # Tech Used:
-___
 React, NextJs, Typescript, Stripe, Chakra-UI, TailwindCSS, React-Icons. 
 
 **_npm run dev_**
