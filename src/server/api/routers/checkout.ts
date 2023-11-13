@@ -95,8 +95,8 @@ export const checkoutRouter = createTRPCRouter({
                             },
                         },
                     ],
-                    success_url: 'http://localhost:3000/success',
-                    cancel_url: 'http://localhost:3000/menu',
+                    success_url: 'https://salon-booking-software.vercel.app/success',
+                    cancel_url: 'https://salon-booking-software.vercel.app/menu',
                 })
 
                 return {
